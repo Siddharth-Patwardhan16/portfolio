@@ -1,0 +1,256 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#26074e",
+                        "inverse-primary": "#b32b00",
+                        "primary-fixed": "#ffdbd2",
+                        "on-background": "#e5e1e4",
+                        "on-secondary-fixed-variant": "#53397c",
+                        "on-primary-fixed": "#3c0800",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#39393b",
+                        "tertiary": "#c6c6cf",
+                        "primary-fixed-dim": "#ffb4a1",
+                        "tertiary-container": "#909099",
+                        "on-primary-fixed-variant": "#891f00",
+                        "on-tertiary-fixed": "#1a1b22",
+                        "on-surface-variant": "#e5beb4",
+                        "inverse-surface": "#e5e1e4",
+                        "on-surface": "#e5e1e4",
+                        "outline-variant": "#5c4039",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1d",
+                        "background": "#131315",
+                        "tertiary-fixed-dim": "#c6c6cf",
+                        "secondary": "#d5baff",
+                        "on-primary": "#611300",
+                        "tertiary-fixed": "#e2e1eb",
+                        "surface-variant": "#353437",
+                        "on-secondary-container": "#c8abf7",
+                        "outline": "#ac8980",
+                        "inverse-on-surface": "#313032",
+                        "primary-container": "#ff5628",
+                        "on-primary-container": "#550f00",
+                        "secondary-fixed-dim": "#d5baff",
+                        "surface": "#131315",
+                        "surface-container-highest": "#353437",
+                        "surface-container-high": "#2a2a2c",
+                        "secondary-fixed": "#ecdcff",
+                        "on-secondary": "#3c2264",
+                        "on-tertiary": "#2f3037",
+                        "surface-container": "#201f22",
+                        "on-error": "#690005",
+                        "surface-tint": "#ffb4a1",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#282930",
+                        "primary": "#ffb4a1",
+                        "surface-dim": "#131315",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-tertiary-fixed-variant": "#45464e",
+                        "secondary-container": "#553b7f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131315;
+            color: #e5e1e4;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(19, 19, 21, 0.6);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 glass-nav bg-gradient-to-b from-white/5 to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-white font-headline">Siddharth Patwardhan</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-headline text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">Work</a>
+<a class="font-headline text-sm tracking-widest uppercase font-black text-[#E8400D] transition-colors duration-300" href="#">About</a>
+<a class="font-headline text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">Skills</a>
+<a class="font-headline text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-gradient-to-r from-primary-container to-primary px-6 py-2.5 rounded-full text-on-primary-container font-headline text-xs font-bold tracking-widest uppercase transition-transform active:scale-95 duration-200">
+                Get in Touch
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Profile Summary Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-secondary text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-6">Introduction</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] mb-8">
+                        Architecting digital <br/>
+<span class="text-primary">experiences</span> with <br/>
+                        precision and soul.
+                    </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-3xl leading-relaxed font-light">
+                        Passionate Computer Science graduate with strong experience in building <span class="text-on-surface font-medium underline decoration-primary-container underline-offset-8">intuitive, scalable, and real-time applications</span>. I view code as the medium for modern artifact creation.
+                    </p>
+</div>
+<div class="lg:col-span-4 hidden lg:block">
+<div class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl relative group">
+<img alt="Siddharth Patwardhan" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out" data-alt="Professional portrait of a young computer scientist in a dark studio setting with cinematic rim lighting and minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAglxMw4KdXdnaA2iCcupqjSOnC26UCtevy_78tk-fB4TOp_nO1inqON-9m4UNVepNnNAHhyfz40ZbLYVE3ny15_E79GYjHgv4ukQ2oIcRf4rU6C990ajuIdvZ8JW4Ah5wFeoFN8VK-9ZYucQZvUxFG_YMoc2DW837lZLVxAyD6w8CvFMAkFY9lvkq2AyXoyFUZiu_U0z90F4onLIm_skfMHHZlXgNF5K1IuDJbUVFxcgHUk4SVp5ND1alCtN9USXuRwqbv7LQ2ifY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Stats / Context -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-40">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-8 bg-surface-container-lowest rounded-xl border border-white/5 flex flex-col justify-between aspect-square md:aspect-auto">
+<span class="material-symbols-outlined text-primary text-4xl">terminal</span>
+<div>
+<h3 class="text-on-surface text-4xl font-black font-headline tracking-tighter mb-1">04+</h3>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-widest">Years Crafting Code</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl flex flex-col justify-between md:col-span-2">
+<div class="flex justify-between items-start">
+<h3 class="text-2xl font-headline font-bold text-on-surface">Philosophical Core</h3>
+<span class="material-symbols-outlined text-secondary">architecture</span>
+</div>
+<p class="text-on-surface-variant font-body text-lg max-w-xl">
+                        I believe in the "Obsidian Gallery" principle: every application should be an artifact that deserves to be showcased, prioritizing performance and cinematic user journeys over standard templates.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-40" id="Work">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-4">
+<h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter">Experience <span class="text-primary">Timeline</span></h2>
+<div class="h-px bg-surface-variant flex-grow mx-8 hidden md:block"></div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-zinc-500 font-bold">2024 — Present</span>
+</div>
+<div class="relative pl-12 border-l border-surface-variant ml-4 md:ml-0">
+<div class="mb-24 relative">
+<!-- Timeline Dot -->
+<div class="absolute -left-[54px] top-0 w-2 h-2 rounded-full bg-primary ring-[10px] ring-primary/10"></div>
+<div class="flex flex-col lg:flex-row lg:items-start gap-12">
+<div class="lg:w-1/3">
+<h3 class="text-2xl font-headline font-extrabold text-on-surface mb-2">Freelance Full-Stack Developer</h3>
+<p class="text-primary font-label text-sm font-bold tracking-widest uppercase">Remote / Global</p>
+</div>
+<div class="lg:w-2/3 space-y-8">
+<div class="group">
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">auto_awesome</span>
+<div>
+<h4 class="text-lg font-headline font-bold text-on-surface mb-2">Real-Time Application Architecture</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">Engineered a low-latency collaborative platform using WebSockets and Redis, reducing data sync overhead by 40% for multi-user environments.</p>
+</div>
+</div>
+</div>
+<div class="group">
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">query_stats</span>
+<div>
+<h4 class="text-lg font-headline font-bold text-on-surface mb-2">Scalable Infrastructure Design</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">Developed and deployed a containerized microservices ecosystem handling 10k+ concurrent requests, leveraging Docker and AWS for seamless horizontal scaling.</p>
+</div>
+</div>
+</div>
+<div class="group">
+<div class="flex gap-6 items-start">
+<span class="material-symbols-outlined text-secondary mt-1">brush</span>
+<div>
+<h4 class="text-lg font-headline font-bold text-on-surface mb-2">Interface Craftsmanship</h4>
+<p class="text-on-surface-variant font-body leading-relaxed">Transformed legacy dashboard systems into modern, high-performance UI components using specialized animation libraries and utility-first design principles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-surface-container-lowest p-12 rounded-xl relative overflow-hidden">
+<!-- Subtle Background Texture -->
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+<svg class="w-full h-full fill-primary" viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M47.7,-64.1C61.4,-56.3,71.5,-40.7,76.5,-23.7C81.5,-6.6,81.4,12,74.5,27.8C67.6,43.6,53.9,56.7,38,64.9C22.1,73.1,4.1,76.5,-14.8,72.7C-33.8,68.9,-53.6,58,-64.7,41.4C-75.7,24.8,-77.9,2.5,-73.2,-17.6C-68.5,-37.6,-57,-55.4,-41.4,-62.7C-25.7,-70.1,-6,-67,11.3,-64.7C28.6,-62.4,47.7,-64.1,47.7,-64.1Z" transform="translate(100 100)"></path>
+</svg>
+</div>
+<div class="md:col-span-8 z-10">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" data-weight="fill">school</span>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-4">Academic Foundation</h2>
+<div class="flex flex-col gap-2">
+<span class="text-2xl font-headline font-bold text-white">Bachelor of Engineering</span>
+<span class="text-xl text-secondary font-medium tracking-tight">Computer Science</span>
+</div>
+<p class="mt-6 text-on-surface-variant font-body max-w-lg">Focused on algorithmic efficiency, system design, and the intersection of human-computer interaction. Graduated with honors, bridging the gap between theoretical computation and practical application.</p>
+</div>
+<div class="md:col-span-4 z-10 flex md:justify-end">
+<div class="bg-surface-container-high px-8 py-10 rounded-xl flex flex-col items-center justify-center text-center shadow-xl border border-white/5">
+<span class="text-zinc-500 font-label text-[10px] tracking-widest uppercase font-bold mb-2">Global Standing</span>
+<span class="text-5xl font-headline font-black text-white">Top 5%</span>
+<span class="text-zinc-500 text-sm mt-2">Class Percentile</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Break / Call to Action Area -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-20">
+<div class="relative rounded-xl overflow-hidden aspect-[21/9] flex items-center justify-center text-center p-8 group">
+<img class="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 opacity-30" data-alt="Abstract futuristic technology background with glowing orange circuitry patterns on dark obsidian metal surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZvAJQMu_VVkoY_utadGuCJcU0syit3TD4Xu0KWYigOX1-46KkCRKgXG3METpgs03bdzs0fc0SwycrMweLLfVluEyhgI5ogsxwLpF8qf591VENhAI9Q2T00BdJYLSjvZlOyiYp_sHe_dPKoFflQyF_DOuiryVTJfdzhO2BSdh439eftdlWmCTQLQNyWd0m_7CV-Fawls0ZzuYJIM9JRggmWZjkKIUI9AaDJgvHCJ3G7DqX7FZvKc7gTXdGgo3iNje2456a9ZVbrQg"/>
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-5xl font-black tracking-tighter mb-8 max-w-2xl mx-auto">Let's build something that <span class="text-primary">breaks the mold</span>.</h2>
+<a class="inline-flex items-center gap-4 bg-white text-black px-10 py-5 rounded-full font-headline font-extrabold tracking-widest uppercase text-xs hover:bg-primary transition-all duration-300" href="mailto:contact@patwardhan.dev">
+                        Start a Project
+                        <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 px-8 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<div class="text-xs text-zinc-500 font-body tracking-tight uppercase font-medium">© 2024 Siddharth Patwardhan. Built for the obsidian gallery.</div>
+</div>
+<div class="flex gap-8">
+<a class="text-zinc-600 font-body text-xs tracking-tight hover:text-[#E8400D] transition-all duration-300 uppercase font-bold" href="#">LinkedIn</a>
+<a class="text-zinc-600 font-body text-xs tracking-tight hover:text-[#E8400D] transition-all duration-300 uppercase font-bold" href="#">GitHub</a>
+<a class="text-zinc-600 font-body text-xs tracking-tight hover:text-[#E8400D] transition-all duration-300 uppercase font-bold" href="#">Twitter</a>
+<a class="text-zinc-600 font-body text-xs tracking-tight hover:text-[#E8400D] transition-all duration-300 uppercase font-bold" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>

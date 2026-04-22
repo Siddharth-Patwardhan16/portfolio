@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#26074e",
+                        "inverse-primary": "#b32b00",
+                        "primary-fixed": "#ffdbd2",
+                        "on-background": "#e5e1e4",
+                        "on-secondary-fixed-variant": "#53397c",
+                        "on-primary-fixed": "#3c0800",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#39393b",
+                        "tertiary": "#c6c6cf",
+                        "primary-fixed-dim": "#ffb4a1",
+                        "tertiary-container": "#909099",
+                        "on-primary-fixed-variant": "#891f00",
+                        "on-tertiary-fixed": "#1a1b22",
+                        "on-surface-variant": "#e5beb4",
+                        "inverse-surface": "#e5e1e4",
+                        "on-surface": "#e5e1e4",
+                        "outline-variant": "#5c4039",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#1c1b1d",
+                        "background": "#131315",
+                        "tertiary-fixed-dim": "#c6c6cf",
+                        "secondary": "#d5baff",
+                        "on-primary": "#611300",
+                        "tertiary-fixed": "#e2e1eb",
+                        "surface-variant": "#353437",
+                        "on-secondary-container": "#c8abf7",
+                        "outline": "#ac8980",
+                        "inverse-on-surface": "#313032",
+                        "primary-container": "#ff5628",
+                        "on-primary-container": "#550f00",
+                        "secondary-fixed-dim": "#d5baff",
+                        "surface": "#131315",
+                        "surface-container-highest": "#353437",
+                        "surface-container-high": "#2a2a2c",
+                        "secondary-fixed": "#ecdcff",
+                        "on-secondary": "#3c2264",
+                        "on-tertiary": "#2f3037",
+                        "surface-container": "#201f22",
+                        "on-error": "#690005",
+                        "surface-tint": "#ffb4a1",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#282930",
+                        "primary": "#ffb4a1",
+                        "surface-dim": "#131315",
+                        "surface-container-lowest": "#0e0e10",
+                        "on-tertiary-fixed-variant": "#45464e",
+                        "secondary-container": "#553b7f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131315;
+            color: #e5e1e4;
+            font-family: 'Inter', sans-serif;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-[#131315]/60 backdrop-blur-xl bg-gradient-to-b from-white/5 to-transparent shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-xl font-black tracking-tighter text-white">Siddharth Patwardhan</div>
+<div class="hidden md:flex gap-12">
+<a class="font-['Manrope'] text-sm tracking-widest uppercase font-black text-[#E8400D] transition-colors duration-300" href="#">Work</a>
+<a class="font-['Manrope'] text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">About</a>
+<a class="font-['Manrope'] text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">Skills</a>
+<a class="font-['Manrope'] text-sm tracking-widest uppercase font-medium text-zinc-400 hover:text-white transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-[#ff5628] text-white px-6 py-2 rounded-full font-['Manrope'] text-sm tracking-widest uppercase font-bold active:scale-95 duration-200 hover:shadow-[0_0_20px_rgba(255,86,40,0.4)] transition-all">
+                Get in Touch
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section -->
+<header class="mb-24">
+<span class="font-headline text-primary uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Selected Works</span>
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter leading-none text-white max-w-4xl">
+                CRAFTING DIGITAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">ARTIFACTS.</span>
+</h1>
+</header>
+<!-- Editorial Project Gallery -->
+<div class="editorial-grid">
+<!-- Project 1: Slary (Large Feature) -->
+<div class="col-span-12 md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[16/9] mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105" data-alt="Modern abstract software dashboard interface with vibrant orange accents on a deep charcoal background with glass textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAmvzjIxsciC-CZXm3LTOLyGw00P5CoKYCtu0cQHbkitnHgwhBq5tujg2XjPjY5ajntmqrMqixH1Ou_xapH-UIfaTjU_lCwss8HVqyLKNT2YUP3--21NjslB-8gPY7EgqBrnT-a-t7eVs5fowvQa2lAb68f4d6XrMg3YIIHneWlXvPqu6cHmYGMStH0cstpzpdz7FGGAL0Wv9aCQuDqS7sV0B-jfqOJOTCsxfBpTRVvT0Zs3E8a2-MoD8TpRW5yBDzggBB9d-05sI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline text-4xl font-bold text-white mb-2">Slary</h3>
+<p class="font-body text-on-surface-variant text-lg max-w-xl">A high-performance automated payroll engine streamlining compensation for distributed global teams.</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary transform group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-300">arrow_outward</span>
+</div>
+<div class="flex gap-3 mt-2">
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Next.js</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Supabase</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">tRPC</span>
+</div>
+</div>
+</div>
+<!-- Project 2: CRM System (Vertical) -->
+<div class="col-span-12 md:col-span-4 group cursor-pointer md:mt-24">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105" data-alt="Elegant close-up of dark glass tech architecture with glowing light lines representing complex data connections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6LIQ5qaj7XQkl7WdA_gXXxHr56VaI-t_Qt8a5PXYyqMwAxd92h04afMcfDApOPjdXEJokZIY3wSPz3sS7Z4MbWCtpE-p3TalH7uQ-uWw8edKJu_pzXqWUd4G7uE7FfuDwnC7lrEx1A6-6Wofs-lwc-B4EmUGO5sptRtWxSiaaqJv1euieU5vSg7odWEdhx2leWy5iqHmPvtZcIDSDBGhOaAcIdeKqHQQWtAYDcoaQyRLXj2TwDAVEW-sNNrcHFHcLLKfMz3NPbtU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-bold text-white mb-2">CRM System</h3>
+<p class="font-body text-on-surface-variant">Revolutionizing enterprise relationship management with predictive analytics and real-time sync.</p>
+<div class="flex flex-wrap gap-3 mt-6">
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">React</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">PostgreSQL</span>
+</div>
+</div>
+</div>
+<!-- Project 3: E-commerce Platform (Offset) -->
+<div class="col-span-12 md:col-span-5 group cursor-pointer md:-mt-12">
+<div class="relative overflow-hidden bg-surface-container-low aspect-square mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105" data-alt="Minimalist luxury fashion website display on a sleek monitor with sharp typography and high-end editorial photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcTJy2jTE9sNgxjYFmzAcUBRTHpu2lgLekGA29pTouZ8Qyna-Pk8EgpHqBfFkLAScPFdr_gAbTYoMvXOq60lOsywngWIxADBWMtanW1xUj9biQEW-83mUONQaz-r_9RQZuo5ROtcJSNE6sO_mc6WRTGMzBa22-IouOWadTxnG4U5-fV1d7A6mpjzx99BVWxrcqv9sYKHEl4elZHWuaZUwrpBTMNUHtAF_fhAG7AxrvhIEjjPGToXsYYMjBA7gBUbifcMzcm0MiS48"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-bold text-white mb-2">E-commerce Platform</h3>
+<p class="font-body text-on-surface-variant">A bespoke digital storefront focusing on rapid-load experiences and seamless checkout flows.</p>
+<div class="flex flex-wrap gap-3 mt-6">
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Next.js 14</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Stripe</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Tailwind</span>
+</div>
+</div>
+</div>
+<!-- Project 4: Tracker App (Wide/Asymmetric) -->
+<div class="col-span-12 md:col-span-7 group cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[16/10] mb-6">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105" data-alt="Dynamic mobile app screen showing health metrics and tracking data with neon gradients and frosted glass elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-emQrbpNs_Zt7R6sHT2FSPoAvA6BHTZA8J6Qozo_nHvfRhDHGwG1zNgMd1ENUaTewLsDRGkJOHPNdy8SmP0Zd9oxVnjQzuoD07TQk0D_5w4Ze2XsYfZa3Ftqcc7j1Np5FRSS9XOEIR0qehSivQ4KhxhJ1Yk8XAzSSAxi1gJJUkNer1jpX1FfiXKtHlW66D1FgjX7MhBxP8AXA2DJBP3aCESAi-WZljRFMB3x2cmnkrPPHzW2MPGGY_odLOlbDxrxUDZBl1I_LY3s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<h3 class="font-headline text-4xl font-bold text-white mb-2">Tracker App</h3>
+<p class="font-body text-on-surface-variant text-lg">An intuitive productivity companion designed to visualize time-allocation with surgical precision.</p>
+<div class="flex gap-3 mt-6">
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">React Native</span>
+<span class="px-4 py-1 rounded-full bg-surface-container-high text-secondary text-xs font-medium uppercase tracking-wider">Node.js</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-48 py-24 text-center bg-surface-container-lowest rounded-xl">
+<h2 class="font-headline text-5xl font-extrabold text-white mb-8">Ready to start something big?</h2>
+<p class="font-body text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto">I'm currently available for freelance projects and full-time engineering roles. Let's build the future of the web together.</p>
+<a class="inline-flex items-center gap-4 bg-white text-background px-10 py-5 rounded-full font-headline font-black uppercase tracking-widest text-sm hover:bg-primary transition-all active:scale-95 group" href="#">
+                Work With Me
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0E0E10] w-full py-12 px-8">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-['Inter'] text-xs text-zinc-500 tracking-tight">
+                © 2024 Siddharth Patwardhan. Built for the obsidian gallery.
+            </div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs text-zinc-600 hover:text-[#E8400D] transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-xs text-zinc-600 hover:text-[#E8400D] transition-all duration-300" href="#">GitHub</a>
+<a class="font-['Inter'] text-xs text-zinc-600 hover:text-[#E8400D] transition-all duration-300" href="#">Twitter</a>
+<a class="font-['Inter'] text-xs text-zinc-600 hover:text-[#E8400D] transition-all duration-300" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
