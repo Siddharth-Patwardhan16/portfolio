@@ -1,5 +1,6 @@
-const PORTRAIT_IMG =
-  "https://images.unsplash.com/photo-1762274673430-f6ca404104d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+import portraitImg from "../../assets/about-portrait.jpg";
+
+const PORTRAIT_IMG = portraitImg;
 const CTA_BG_IMG =
   "https://images.unsplash.com/photo-1633164227069-df58d5f183df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
