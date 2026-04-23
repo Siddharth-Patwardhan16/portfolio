@@ -187,7 +187,12 @@ export function Home() {
 
           <div className="grid grid-cols-1 gap-12 text-zinc-100 md:grid-cols-2">
             {/* Case Study 1 — Slary */}
-            <Link to="/work" className="group relative block space-y-6">
+            <a
+              href="https://app.slary.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block space-y-6"
+            >
               <div
                 className="relative aspect-[16/10] overflow-hidden rounded-xl"
                 style={{
@@ -238,7 +243,7 @@ export function Home() {
                   arrow_outward
                 </span>
               </div>
-            </Link>
+            </a>
 
             {/* Case Study 2 — CRM */}
             <Link to="/work" className="group relative block space-y-6 md:mt-24">

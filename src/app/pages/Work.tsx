@@ -39,7 +39,12 @@ export function Work() {
         {/* Row 1: Slary (8) + CRM (4) */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
           {/* Slary */}
-          <div className="group cursor-pointer md:col-span-8">
+          <a
+            href="https://app.slary.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block cursor-pointer md:col-span-8"
+          >
             <div
               className="relative mb-6 overflow-hidden"
               style={{ backgroundColor: "#1c1b1d", aspectRatio: "16/9" }}
@@ -92,7 +97,7 @@ export function Work() {
                 ))}
               </div>
             </div>
-          </div>
+          </a>
 
           {/* CRM — offset down */}
           <div className="group cursor-pointer md:col-span-4 md:mt-24">
