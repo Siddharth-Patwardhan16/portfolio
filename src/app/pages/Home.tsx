@@ -1,67 +1,15 @@
 import { Link } from "react-router";
 
-const SLARY_IMG =
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-const CRM_IMG =
-  "https://images.unsplash.com/photo-1610986602538-431d65df4385?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
+import { ProjectCard } from "../components/ProjectCard";
+import { CAPABILITIES, FEATURED_PROJECTS, PROFILE } from "../../data/profile";
+
 const HERO_IMG =
   "https://images.unsplash.com/photo-1739921669541-50624a928b3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-
-const capabilities = [
-  {
-    icon: "layers",
-    title: "Full-Stack",
-    desc: "Architecting end-to-end systems with React, Node.js, and high-performance databases.",
-    bgIcon: "rgba(255,180,161,0.1)",
-    iconColor: "#ffb4a1",
-    fill: true,
-  },
-  {
-    icon: "smartphone",
-    title: "Mobile",
-    desc: "Building native-feel experiences across platforms using React Native and Flutter.",
-    bgIcon: "rgba(85,59,127,0.2)",
-    iconColor: "#d5baff",
-    fill: true,
-  },
-  {
-    icon: "terminal",
-    title: "DevOps",
-    desc: "Implementing CI/CD pipelines, Docker containers, and cloud infrastructure on AWS.",
-    bgIcon: "rgba(144,144,153,0.2)",
-    iconColor: "#c6c6cf",
-    fill: true,
-  },
-  {
-    icon: "monitoring",
-    title: "Optimization",
-    desc: "Precision performance tuning, SEO excellence, and extreme accessibility standards.",
-    bgIcon: "rgba(83,57,124,0.2)",
-    iconColor: "#d5baff",
-    fill: true,
-  },
-  {
-    icon: "database",
-    title: "Data Design",
-    desc: "Structuring complex relational and NoSQL schemas for massive data throughput.",
-    bgIcon: "rgba(137,31,0,0.2)",
-    iconColor: "#ffb4a1",
-    fill: true,
-  },
-  {
-    icon: "gesture",
-    title: "UX Strategy",
-    desc: "Design systems and user journey mapping focused on conversion and retention.",
-    bgIcon: "rgba(53,52,55,0.4)",
-    iconColor: "#e5beb4",
-    fill: true,
-  },
-];
 
 export function Home() {
   return (
     <main className="relative">
-      {/* Hero Section */}
       <section
         className="relative flex min-h-screen items-center px-8 pt-32 pb-20"
         style={{
@@ -71,7 +19,6 @@ export function Home() {
       >
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="space-y-8 lg:col-span-8">
-            {/* Badge */}
             <div
               className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
               style={{ backgroundColor: "#2a2a2c", borderColor: "rgba(92,64,57,0.15)" }}
@@ -88,7 +35,6 @@ export function Home() {
               </span>
             </div>
 
-            {/* Headline */}
             <h1
               className="text-5xl leading-none font-extrabold tracking-tighter text-white md:text-7xl lg:text-8xl"
               style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.9 }}
@@ -98,21 +44,18 @@ export function Home() {
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "linear-gradient(to right, #ffb4a1, #ff5628)" }}
               >
-                Digital Narratives
+                Digital Products
               </span>
             </h1>
 
-            {/* Subtitle */}
             <p
               className="max-w-2xl text-xl leading-relaxed font-light md:text-2xl"
               style={{ color: "#e5beb4" }}
             >
-              Full-Stack Developer &amp; Systems Architect specialized in high-performance web and
-              mobile applications.
+              {PROFILE.title} based in {PROFILE.location}. {PROFILE.headline}
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-6 pt-4">
+            <div className="flex flex-wrap gap-4 pt-4">
               <Link
                 to="/work"
                 className="rounded-full px-8 py-4 font-bold transition-transform hover:scale-105"
@@ -124,6 +67,20 @@ export function Home() {
               >
                 View Case Studies
               </Link>
+              <a
+                href={PROFILE.linkedIn.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  background: "rgba(53,52,55,0.2)",
+                  borderColor: "rgba(92,64,57,0.15)",
+                  color: "#ffffff",
+                }}
+              >
+                Connect on LinkedIn
+              </a>
               <Link
                 to="/about"
                 className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
@@ -134,12 +91,11 @@ export function Home() {
                   color: "#ffffff",
                 }}
               >
-                The Methodology
+                About Me
               </Link>
             </div>
           </div>
 
-          {/* Hero visual */}
           <div className="relative lg:col-span-4">
             <div className="relative flex aspect-square items-center justify-center">
               <div
@@ -152,7 +108,7 @@ export function Home() {
               >
                 <img
                   src={HERO_IMG}
-                  alt="Systems Architecture Visual"
+                  alt="Systems architecture visual"
                   className="h-full w-full object-cover opacity-80"
                 />
               </div>
@@ -161,7 +117,12 @@ export function Home() {
         </div>
       </section>
 
-      {/* Featured Work */}
+      <section className="px-8 py-16" style={{ backgroundColor: "#0e0e10" }}>
+        <div className="mx-auto max-w-screen-2xl">
+          <LinkedInProfileCard />
+        </div>
+      </section>
+
       <section className="px-8 py-24" style={{ backgroundColor: "#0e0e10" }}>
         <div className="mx-auto max-w-screen-2xl">
           <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
@@ -170,13 +131,13 @@ export function Home() {
                 className="text-sm font-bold tracking-widest uppercase"
                 style={{ color: "#e5beb4", fontFamily: "'Inter', sans-serif" }}
               >
-                Featured Artifacts
+                Featured Work
               </h2>
               <h3
                 className="text-4xl font-black text-white md:text-5xl"
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
-                Cinematic Engineering.
+                Production-grade builds.
               </h3>
             </div>
             <div
@@ -186,123 +147,12 @@ export function Home() {
           </div>
 
           <div className="grid grid-cols-1 gap-12 text-zinc-100 md:grid-cols-2">
-            {/* Case Study 1 — Slary */}
-            <a
-              href="https://app.slary.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block space-y-6"
-            >
-              <div
-                className="relative aspect-[16/10] overflow-hidden rounded-xl"
-                style={{
-                  backgroundColor: "#201f22",
-                  boxShadow: "0 32px 64px -16px rgba(0,0,0,0.6)",
-                }}
-              >
-                <img
-                  src={SLARY_IMG}
-                  alt="Slary - Payroll SaaS"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: "linear-gradient(to top, #131315 0%, transparent 60%)",
-                    opacity: 0.6,
-                  }}
-                />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  {["Next.js 15", "tRPC", "Supabase"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="flex items-start justify-between">
-                <div className="max-w-md">
-                  <h4
-                    className="mb-3 text-3xl font-bold text-white"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    Slary - Payroll SaaS
-                  </h4>
-                  <p className="text-lg leading-relaxed" style={{ color: "#e5beb4" }}>
-                    A high-performance automated payroll engine streamlining compensation for
-                    distributed global teams. Built with Next.js 15, tRPC, and Supabase.
-                  </p>
-                </div>
-                <span
-                  className="material-symbols-outlined text-4xl transition-all group-hover:translate-x-2 group-hover:-translate-y-2"
-                  style={{ color: "#ffb4a1" }}
-                >
-                  arrow_outward
-                </span>
-              </div>
-            </a>
-
-            {/* Case Study 2 — CRM */}
-            <Link to="/work" className="group relative block space-y-6 md:mt-24">
-              <div
-                className="relative aspect-[16/10] overflow-hidden rounded-xl"
-                style={{
-                  backgroundColor: "#201f22",
-                  boxShadow: "0 32px 64px -16px rgba(0,0,0,0.6)",
-                }}
-              >
-                <img
-                  src={CRM_IMG}
-                  alt="CRM System Project"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background: "linear-gradient(to top, #131315 0%, transparent 60%)",
-                    opacity: 0.6,
-                  }}
-                />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  {["React", "tRPC", "PostgreSQL"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[10px] font-bold tracking-wider text-white uppercase backdrop-blur-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="flex items-start justify-between">
-                <div className="max-w-md">
-                  <h4
-                    className="mb-3 text-3xl font-bold text-white"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    Custom CRM System
-                  </h4>
-                  <p className="text-lg leading-relaxed" style={{ color: "#e5beb4" }}>
-                    Unified customer intelligence platform utilizing real-time data streaming for
-                    graphite manufacturing operations.
-                  </p>
-                </div>
-                <span
-                  className="material-symbols-outlined text-4xl transition-all group-hover:translate-x-2 group-hover:-translate-y-2"
-                  style={{ color: "#ffb4a1" }}
-                >
-                  arrow_outward
-                </span>
-              </div>
-            </Link>
+            <ProjectCard project={FEATURED_PROJECTS[0]} />
+            <ProjectCard project={FEATURED_PROJECTS[1]} className="md:mt-24" />
           </div>
         </div>
       </section>
 
-      {/* Technical Expertise */}
       <section className="px-8 py-32" style={{ backgroundColor: "#131315" }}>
         <div className="mx-auto max-w-screen-2xl">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
@@ -318,16 +168,15 @@ export function Home() {
                 style={{ fontFamily: "'Manrope', sans-serif" }}
               >
                 Mastering the <br />
-                Digital Stack.
+                digital stack.
               </h3>
               <p className="text-lg leading-relaxed" style={{ color: "#e5beb4" }}>
-                I specialize in bridging the gap between sophisticated aesthetics and rock-solid
-                technical architecture.
+                Bridging polished interfaces with reliable, type-safe architecture.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8">
-              {capabilities.map((cap) => (
+              {CAPABILITIES.map((cap) => (
                 <div
                   key={cap.title}
                   className="group rounded-xl border p-8 transition-colors"
@@ -372,7 +221,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* CTA */}
       <section
         className="px-8 py-24"
         style={{ background: "linear-gradient(to bottom, #131315, #0e0e10)" }}
@@ -382,9 +230,9 @@ export function Home() {
             className="text-4xl leading-tight font-black text-white md:text-6xl"
             style={{ fontFamily: "'Manrope', sans-serif" }}
           >
-            Ready to evolve your digital presence?
+            Ready to build something that ships?
           </h2>
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
               className="group relative flex items-center gap-3 overflow-hidden rounded-full bg-white px-12 py-6 font-extrabold transition-all hover:bg-[#ffb4a1] active:scale-95"
@@ -395,6 +243,20 @@ export function Home() {
                 arrow_forward
               </span>
             </Link>
+            <a
+              href={PROFILE.linkedIn.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-full border px-12 py-6 font-extrabold transition-all hover:bg-[#0a66c2]/20 active:scale-95"
+              style={{
+                fontFamily: "'Manrope', sans-serif",
+                borderColor: "rgba(10,102,194,0.4)",
+                color: "#ffffff",
+              }}
+            >
+              LinkedIn
+              <span className="material-symbols-outlined">open_in_new</span>
+            </a>
           </div>
         </div>
       </section>

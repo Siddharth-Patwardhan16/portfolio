@@ -1,3 +1,7 @@
+import { Link } from "react-router";
+
+import { PROFILE, SKILL_CATEGORIES } from "../../data/profile";
+
 const CODE_IMG =
   "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 const REACT_IMG =
@@ -7,10 +11,28 @@ const MOBILE_IMG =
 const SERVER_IMG =
   "https://images.unsplash.com/photo-1752336459369-d7ff0ab9da43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 
+const FRONTEND_CARDS = [
+  {
+    img: REACT_IMG,
+    title: "React & Next.js",
+    desc: "SSG, SSR, and complex state management for high-conversion web applications.",
+  },
+  {
+    img: MOBILE_IMG,
+    title: "Cross-Platform",
+    desc: "Flutter and React Native for native-feel performance on iOS and Android.",
+  },
+  {
+    img: null,
+    title: "Design-to-Code",
+    desc: "Precision implementation of complex animations and editorial layouts.",
+    icon: "auto_awesome",
+  },
+] as const;
+
 export function Skills() {
   return (
     <main className="overflow-x-hidden pt-32 pb-24">
-      {/* Hero */}
       <section className="mx-auto mb-32 grid max-w-screen-2xl grid-cols-1 items-end gap-12 px-8 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <div
@@ -41,13 +63,12 @@ export function Skills() {
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "linear-gradient(to right, #E8400D, #ffb4a1)" }}
             >
-              the Stack.
+              the stack.
             </span>
           </h1>
           <p className="max-w-2xl text-xl leading-relaxed font-light" style={{ color: "#e5beb4" }}>
-            My engineering philosophy centers on architectural resilience. I don't just write code —
-            I craft high-performance digital ecosystems where front-end fluidity meets back-end
-            solidity.
+            TypeScript-first development across web, mobile, and APIs — deployed with modern CI/CD
+            and no server-side database for this portfolio.
           </p>
         </div>
 
@@ -71,10 +92,8 @@ export function Skills() {
         </div>
       </section>
 
-      {/* Bento Grid */}
       <section className="mx-auto mb-24 max-w-screen-2xl px-8">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          {/* Languages — large card */}
           <div
             className="group relative overflow-hidden rounded-xl p-10 md:col-span-7 lg:col-span-8"
             style={{ background: "rgba(53,52,55,0.4)", backdropFilter: "blur(12px)" }}
@@ -87,7 +106,7 @@ export function Skills() {
                 Languages
               </h3>
               <div className="flex flex-wrap gap-4">
-                {["JavaScript", "TypeScript", "Dart"].map((lang) => (
+                {SKILL_CATEGORIES.languages.map((lang) => (
                   <span
                     key={lang}
                     className="cursor-default rounded-full border px-6 py-3 text-sm font-medium transition-all"
@@ -96,32 +115,17 @@ export function Skills() {
                       color: "#e5e1e4",
                       borderColor: "rgba(255,255,255,0.05)",
                     }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "#ff5628";
-                      (e.currentTarget as HTMLElement).style.color = "#550f00";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.backgroundColor = "#1c1b1d";
-                      (e.currentTarget as HTMLElement).style.color = "#e5e1e4";
-                    }}
                   >
                     {lang}
                   </span>
                 ))}
               </div>
             </div>
-            {/* Glow */}
-            <div
-              className="absolute -right-12 -bottom-12 h-64 w-64 rounded-full transition-all"
-              style={{ background: "rgba(255,180,161,0.1)", filter: "blur(40px)" }}
-            />
-            {/* BG texture */}
             <div className="pointer-events-none absolute top-0 right-0 h-full w-full overflow-hidden opacity-10">
               <img src={CODE_IMG} className="h-full w-full object-cover grayscale" alt="" />
             </div>
           </div>
 
-          {/* Backend */}
           <div
             className="flex flex-col justify-between rounded-xl p-10 md:col-span-5 lg:col-span-4"
             style={{ backgroundColor: "#1c1b1d" }}
@@ -131,7 +135,7 @@ export function Skills() {
                 className="material-symbols-outlined mb-4 block"
                 style={{ color: "#E8400D", fontVariationSettings: "'FILL' 1" }}
               >
-                database
+                api
               </span>
               <h3
                 className="mb-2 text-2xl font-bold text-white"
@@ -140,15 +144,11 @@ export function Skills() {
                 Backend
               </h3>
               <p className="mb-8 text-sm" style={{ color: "#e5beb4" }}>
-                Building scalable logic and API layers.
+                Type-safe APIs and scalable server logic.
               </p>
             </div>
             <div className="space-y-4">
-              {[
-                { name: "Node.js", label: "Runtime" },
-                { name: "tRPC", label: "Type Safety" },
-                { name: "FastAPI", label: "Python" },
-              ].map((item) => (
+              {SKILL_CATEGORIES.backend.map((item) => (
                 <div
                   key={item.name}
                   className="flex items-center justify-between py-2"
@@ -163,7 +163,6 @@ export function Skills() {
             </div>
           </div>
 
-          {/* Frontend Reel — full width */}
           <div className="mt-12 mb-12 md:col-span-12">
             <div className="mb-8 flex items-center justify-between px-2">
               <h3
@@ -182,24 +181,7 @@ export function Skills() {
               className="-mx-8 flex gap-6 px-8 pb-8"
               style={{ overflowX: "auto", scrollbarWidth: "none" }}
             >
-              {[
-                {
-                  img: REACT_IMG,
-                  title: "React & Next.js",
-                  desc: "SSG, SSR, and complex state management for high-conversion web applications.",
-                },
-                {
-                  img: MOBILE_IMG,
-                  title: "Cross-Platform",
-                  desc: "Flutter and React Native for native-feel performance on iOS and Android.",
-                },
-                {
-                  img: null,
-                  title: "Design-to-Code",
-                  desc: "Precision implementation of complex animations and editorial layouts.",
-                  icon: "auto_awesome",
-                },
-              ].map((card) => (
+              {FRONTEND_CARDS.map((card) => (
                 <div
                   key={card.title}
                   className="group flex flex-col gap-12 rounded-xl border p-8 transition-transform hover:scale-[1.02]"
@@ -214,6 +196,7 @@ export function Skills() {
                     <img
                       src={card.img}
                       alt={card.title}
+                      loading="lazy"
                       className="w-full rounded-lg object-cover"
                       style={{ height: "12rem" }}
                     />
@@ -222,10 +205,6 @@ export function Skills() {
                       className="relative flex w-full items-center justify-center overflow-hidden rounded-lg"
                       style={{ height: "12rem", backgroundColor: "#2a2a2c" }}
                     >
-                      <div
-                        className="h-32 w-32 rounded-full"
-                        style={{ backgroundColor: "rgba(232,64,13,0.2)", filter: "blur(2rem)" }}
-                      />
                       <span
                         className="material-symbols-outlined absolute text-6xl"
                         style={{ color: "#E8400D" }}
@@ -250,31 +229,19 @@ export function Skills() {
             </div>
           </div>
 
-          {/* Data Infrastructure */}
           <div className="rounded-xl p-10 md:col-span-6" style={{ backgroundColor: "#1c1b1d" }}>
             <h3
               className="mb-8 text-2xl font-bold text-white"
               style={{ fontFamily: "'Manrope', sans-serif" }}
             >
-              Data Infrastructure
+              Platforms & Integrations
             </h3>
             <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: "Relational", name: "Supabase" },
-                { label: "NoSQL", name: "MongoDB" },
-                { label: "Realtime", name: "Firebase" },
-                { label: "Analytics", name: "PostgreSQL" },
-              ].map((item) => (
+              {SKILL_CATEGORIES.platforms.map((item) => (
                 <div
                   key={item.name}
                   className="cursor-default rounded-lg p-6 transition-colors"
                   style={{ backgroundColor: "#201f22" }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.backgroundColor = "rgba(232,64,13,0.1)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.backgroundColor = "#201f22")
-                  }
                 >
                   <p
                     className="mb-2 text-xs tracking-widest uppercase"
@@ -288,7 +255,6 @@ export function Skills() {
             </div>
           </div>
 
-          {/* Utility Belt */}
           <div
             className="flex flex-col gap-8 rounded-xl p-10 md:col-span-6 md:flex-row"
             style={{ backgroundColor: "#353437" }}
@@ -301,27 +267,17 @@ export function Skills() {
                 The Utility Belt
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: "#e5beb4" }}>
-                Optimization tools that bridge the gap between development and production-ready
-                environments.
+                Tools that bridge development and production-ready environments.
               </p>
             </div>
             <div className="flex-1 space-y-4">
-              {[
-                { icon: "V", label: "Vercel Edge", iconStyle: { backgroundColor: "#000" } },
-                { icon: "api", label: "Postman / Insomnia", isSymbol: true },
-                {
-                  icon: "lan",
-                  label: "Ngrok Tunneling",
-                  isSymbol: true,
-                  iconStyle: { backgroundColor: "#201f22" },
-                },
-              ].map((tool) => (
+              {SKILL_CATEGORIES.tools.map((tool) => (
                 <div key={tool.label} className="flex items-center gap-3">
-                  {tool.isSymbol ? (
+                  {"isSymbol" in tool && tool.isSymbol ? (
                     <span
                       className="material-symbols-outlined flex h-8 w-8 items-center justify-center rounded-lg text-sm"
                       style={{
-                        ...(tool.iconStyle || { backgroundColor: "rgba(232,64,13,0.2)" }),
+                        ...("iconStyle" in tool ? tool.iconStyle : { backgroundColor: "rgba(232,64,13,0.2)" }),
                         color: "#E8400D",
                       }}
                     >
@@ -330,7 +286,7 @@ export function Skills() {
                   ) : (
                     <span
                       className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white"
-                      style={tool.iconStyle}
+                      style={"iconStyle" in tool ? tool.iconStyle : undefined}
                     >
                       {tool.icon}
                     </span>
@@ -343,7 +299,6 @@ export function Skills() {
             </div>
           </div>
 
-          {/* DevOps full-width */}
           <div
             className="group mt-6 flex flex-col items-center gap-12 rounded-xl border p-12 md:col-span-12 md:flex-row"
             style={{
@@ -370,43 +325,24 @@ export function Skills() {
                 CI/CD &amp; DevOps Automation
               </h3>
               <p className="mb-8 leading-relaxed" style={{ color: "#e5beb4" }}>
-                I specialize in zero-downtime deployments and automated testing pipelines that
-                ensure code quality without sacrificing velocity.
+                Zero-downtime deployments and automated testing pipelines that keep velocity high.
               </p>
-              <div className="flex gap-4">
-                {[
-                  { icon: "speed", label: "Performance" },
-                  { icon: "verified_user", label: "Stability" },
-                  { icon: "published_with_changes", label: "Automation" },
-                ].map((item, idx) => (
-                  <div key={item.label} className="flex items-center gap-2">
-                    {idx > 0 && (
-                      <div
-                        className="mx-2 h-16 w-px"
-                        style={{ backgroundColor: "rgba(255,255,255,0.1)" }}
-                      />
-                    )}
-                    <div className="flex flex-col items-center">
-                      <div
-                        className="mb-2 flex h-12 w-12 items-center justify-center rounded-full"
-                        style={{ border: "1px solid rgba(232,64,13,0.4)" }}
-                      >
-                        <span className="material-symbols-outlined" style={{ color: "#E8400D" }}>
-                          {item.icon}
-                        </span>
-                      </div>
-                      <span className="text-xs font-bold uppercase" style={{ color: "#9ca3af" }}>
-                        {item.label}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <a
+                href={PROFILE.linkedIn.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-bold"
+                style={{ color: "#ffb4a1" }}
+              >
+                See full profile on LinkedIn
+                <span className="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg md:h-96 md:w-1/2">
               <img
                 src={SERVER_IMG}
-                alt="Server Infrastructure"
+                alt=""
+                loading="lazy"
                 className="h-full w-full scale-110 object-cover transition-transform duration-700 group-hover:scale-100"
               />
               <div
@@ -418,7 +354,6 @@ export function Skills() {
         </div>
       </section>
 
-      {/* Tagline */}
       <section className="mx-auto max-w-screen-2xl px-8 py-24 text-center">
         <h2
           className="text-4xl font-black tracking-widest uppercase select-none md:text-6xl"
@@ -426,6 +361,14 @@ export function Skills() {
         >
           Innovation &nbsp; Through &nbsp; Precision
         </h2>
+        <Link
+          to="/contact"
+          className="mt-12 inline-flex items-center gap-2 rounded-full px-8 py-4 font-bold text-white"
+          style={{ backgroundColor: "#ff5628", color: "#550f00" }}
+        >
+          Get in touch
+          <span className="material-symbols-outlined">arrow_forward</span>
+        </Link>
       </section>
     </main>
   );

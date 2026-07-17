@@ -1,3 +1,5 @@
+import { PROFILE, SOCIAL_LINKS } from "../../data/profile";
+
 export function Footer() {
   return (
     <footer className="w-full px-8 py-12" style={{ backgroundColor: "#0E0E10" }}>
@@ -6,18 +8,10 @@ export function Footer() {
           className="text-xs tracking-tight"
           style={{ fontFamily: "'Inter', sans-serif", color: "#71717a" }}
         >
-          © 2024 Siddharth Patwardhan. Built for the obsidian gallery.
+          © {new Date().getFullYear()} {PROFILE.name}. Static portfolio — no database.
         </div>
-        <div className="flex gap-8">
-          {[
-            {
-              label: "LinkedIn",
-              href: "https://www.linkedin.com/in/siddharth-patwardhan-659b0b2a9/",
-            },
-            { label: "GitHub", href: "https://github.com/Siddharth-Patwardhan16" },
-            { label: "Twitter", href: "#" },
-            { label: "Email", href: "mailto:siddpp16@gmail.com" },
-          ].map((link) => (
+        <div className="flex flex-wrap justify-center gap-8">
+          {SOCIAL_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
