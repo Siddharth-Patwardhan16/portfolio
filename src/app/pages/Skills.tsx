@@ -201,7 +201,7 @@ export function Skills() {
                       src={card.img}
                       alt={card.title}
                       loading="lazy"
-                      className="w-full rounded-lg object-cover"
+                      className="w-full rounded-lg object-cover object-center"
                       style={{ height: "12rem" }}
                     />
                   ) : (
@@ -260,7 +260,7 @@ export function Skills() {
           </div>
 
           <div
-            className="flex flex-col gap-8 rounded-xl p-10 md:col-span-6 md:flex-row"
+            className="flex flex-col items-center gap-10 rounded-xl p-10 text-center md:col-span-6 md:flex-row md:items-center md:text-left"
             style={{ backgroundColor: "#353437" }}
           >
             <div className="flex-1">
@@ -274,27 +274,37 @@ export function Skills() {
                 Tools that bridge development and production-ready environments.
               </p>
             </div>
-            <div className="flex-1 space-y-4">
+            <div className="flex flex-1 flex-col items-center gap-4">
               {SKILL_CATEGORIES.tools.map((tool) => (
-                <div key={tool.label} className="flex items-center gap-3">
-                  {"isSymbol" in tool && tool.isSymbol ? (
-                    <span
-                      className="material-symbols-outlined flex h-8 w-8 items-center justify-center rounded-lg text-sm"
-                      style={{
-                        ...("iconStyle" in tool ? tool.iconStyle : { backgroundColor: "rgba(232,64,13,0.2)" }),
-                        color: "#E8400D",
-                      }}
-                    >
-                      {tool.icon}
-                    </span>
-                  ) : (
-                    <span
-                      className="flex h-8 w-8 items-center justify-center rounded-lg text-xs font-bold text-white"
-                      style={"iconStyle" in tool ? tool.iconStyle : undefined}
-                    >
-                      {tool.icon}
-                    </span>
-                  )}
+                <div
+                  key={tool.label}
+                  className="flex w-full max-w-xs items-center justify-center gap-3 sm:justify-start"
+                >
+                  <div
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
+                    style={
+                      "isSymbol" in tool && tool.isSymbol
+                        ? {
+                            ...("iconStyle" in tool
+                              ? tool.iconStyle
+                              : { backgroundColor: "rgba(232,64,13,0.2)" }),
+                          }
+                        : "iconStyle" in tool
+                          ? tool.iconStyle
+                          : { backgroundColor: "#000" }
+                    }
+                  >
+                    {"isSymbol" in tool && tool.isSymbol ? (
+                      <span
+                        className="material-symbols-outlined text-[18px] leading-none"
+                        style={{ color: "#E8400D", fontVariationSettings: "'FILL' 0" }}
+                      >
+                        {tool.icon}
+                      </span>
+                    ) : (
+                      <span className="text-xs leading-none font-bold text-white">{tool.icon}</span>
+                    )}
+                  </div>
                   <span className="font-medium" style={{ color: "#cbd5e1" }}>
                     {tool.label}
                   </span>

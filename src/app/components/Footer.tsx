@@ -8,7 +8,7 @@ export function Footer() {
           className="text-xs tracking-tight"
           style={{ fontFamily: "'Inter', sans-serif", color: "#71717a" }}
         >
-          © {new Date().getFullYear()} {PROFILE.name}. Static portfolio — no database.
+          © {new Date().getFullYear()} {PROFILE.name}.
         </div>
         <div className="flex flex-wrap justify-center gap-8">
           {SOCIAL_LINKS.map((link) => (
