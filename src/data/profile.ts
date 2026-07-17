@@ -21,7 +21,7 @@ export const PROFILE = {
     label: "Siddharth-Patwardhan16",
   },
   liveProduct: {
-    url: "https://app.slary.in",
+    url: "https://slary.in",
     label: "Slary Payroll",
   },
 } as const;
@@ -58,7 +58,7 @@ export const FEATURED_PROJECTS: readonly Project[] = [
     id: "slary",
     title: "Slary — Payroll SaaS",
     description:
-      "A production payroll engine for distributed teams. Multi-tenant architecture, Stripe ACH payouts, and automated compliance — live at app.slary.in.",
+      "A production payroll engine for distributed teams. Multi-tenant architecture, Stripe ACH payouts, and automated compliance — live at slary.in.",
     tags: ["Next.js 15", "tRPC", "TypeScript", "Stripe"],
     href: PROFILE.liveProduct.url,
     image:
