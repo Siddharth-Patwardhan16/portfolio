@@ -1,6 +1,6 @@
-import { Outlet } from "react-router";
-import { NavBar } from "./NavBar";
 import { Footer } from "./Footer";
+import { NavBar } from "./NavBar";
+import { PageFade } from "./motion/PageFade";
 
 export function Layout() {
   return (
@@ -9,7 +9,7 @@ export function Layout() {
       style={{ backgroundColor: "#131315", color: "#e5e1e4", fontFamily: "'Inter', sans-serif" }}
     >
       <NavBar />
-      <Outlet />
+      <PageFade />
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
 import { PROFILE, SOCIAL_LINKS } from "../../data/profile";
+import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
+import { Reveal } from "../components/motion/Reveal";
 
 const ABSTRACT_IMG =
   "https://images.unsplash.com/photo-1624821778984-1e62eae1e033?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
@@ -32,38 +33,40 @@ export function Contact() {
 
   return (
     <main className="mx-auto max-w-screen-2xl px-6 pt-32 pb-24 md:px-12">
-      <section className="mb-24">
-        <div
-          className="mb-8 inline-block rounded-full border px-4 py-1.5 text-xs font-bold tracking-widest uppercase"
-          style={{
-            backgroundColor: "#2a2a2c",
-            borderColor: "rgba(92,64,57,0.15)",
-            color: "#d5baff",
-            letterSpacing: "0.2em",
-          }}
-        >
-          Available for New Projects
-        </div>
-        <h1
-          className="mb-12 max-w-4xl text-5xl font-extrabold tracking-tighter text-white md:text-8xl"
-          style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.9 }}
-        >
-          Let's build something{" "}
-          <span
-            className="bg-clip-text text-transparent"
-            style={{ backgroundImage: "linear-gradient(135deg, #ffb4a1, #ff5628, #d5baff)" }}
+      <Reveal className="mb-24" y={36}>
+        <section>
+          <div
+            className="mb-8 inline-block rounded-full border px-4 py-1.5 text-xs font-bold tracking-widest uppercase"
+            style={{
+              backgroundColor: "#2a2a2c",
+              borderColor: "rgba(92,64,57,0.15)",
+              color: "#d5baff",
+              letterSpacing: "0.2em",
+            }}
           >
-            extraordinary.
-          </span>
-        </h1>
-        <p
-          className="max-w-2xl text-lg leading-relaxed font-light md:text-xl"
-          style={{ color: "#e5beb4" }}
-        >
-          Reach out by email, connect on LinkedIn, or send a message below. Your email client opens
-          locally — no server or database required.
-        </p>
-      </section>
+            Available for New Projects
+          </div>
+          <h1
+            className="mb-12 max-w-4xl text-5xl font-extrabold tracking-tighter text-white md:text-8xl"
+            style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.9 }}
+          >
+            Let's build something{" "}
+            <span
+              className="ember-underline bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(135deg, #ffb4a1, #ff5628, #d5baff)" }}
+            >
+              extraordinary.
+            </span>
+          </h1>
+          <p
+            className="max-w-2xl text-lg leading-relaxed font-light md:text-xl"
+            style={{ color: "#e5beb4" }}
+          >
+            Reach out by email, connect on LinkedIn, or send a message below. Your email client opens
+            locally — no server or database required.
+          </p>
+        </section>
+      </Reveal>
 
       <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
         <div

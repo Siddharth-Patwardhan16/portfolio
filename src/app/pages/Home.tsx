@@ -1,8 +1,10 @@
 import { Link } from "react-router";
 
+import { CAPABILITIES, FEATURED_PROJECTS, PROFILE } from "../../data/profile";
 import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
 import { ProjectCard } from "../components/ProjectCard";
-import { CAPABILITIES, FEATURED_PROJECTS, PROFILE } from "../../data/profile";
+import { HeroEntrance, HeroItem } from "../components/motion/HeroEntrance";
+import { Reveal, Stagger, StaggerItem } from "../components/motion/Reveal";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1739921669541-50624a928b3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
@@ -18,88 +20,96 @@ export function Home() {
         }}
       >
         <div className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div className="space-y-8 lg:col-span-8">
-            <div
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
-              style={{ backgroundColor: "#2a2a2c", borderColor: "rgba(92,64,57,0.15)" }}
-            >
-              <span
-                className="h-2 w-2 animate-pulse rounded-full"
-                style={{ backgroundColor: "#ff5628" }}
-              />
-              <span
-                className="text-xs font-bold tracking-widest uppercase"
-                style={{ fontFamily: "'Inter', sans-serif", color: "#e5beb4" }}
+          <HeroEntrance className="space-y-8 lg:col-span-8">
+            <HeroItem>
+              <div
+                className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5"
+                style={{ backgroundColor: "#2a2a2c", borderColor: "rgba(92,64,57,0.15)" }}
               >
-                Available for high-stakes projects
-              </span>
-            </div>
+                <span
+                  className="h-2 w-2 animate-pulse rounded-full"
+                  style={{ backgroundColor: "#ff5628" }}
+                />
+                <span
+                  className="text-xs font-bold tracking-widest uppercase"
+                  style={{ fontFamily: "'Inter', sans-serif", color: "#e5beb4" }}
+                >
+                  Available for high-stakes projects
+                </span>
+              </div>
+            </HeroItem>
 
-            <h1
-              className="text-5xl leading-none font-extrabold tracking-tighter text-white md:text-7xl lg:text-8xl"
-              style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.9 }}
-            >
-              Building Scalable <br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(to right, #ffb4a1, #ff5628)" }}
+            <HeroItem>
+              <h1
+                className="text-5xl leading-none font-extrabold tracking-tighter text-white md:text-7xl lg:text-8xl"
+                style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.9 }}
               >
-                Digital Products
-              </span>
-            </h1>
+                Building Scalable <br />
+                <span
+                  className="ember-underline bg-clip-text text-transparent"
+                  style={{ backgroundImage: "linear-gradient(to right, #ffb4a1, #ff5628)" }}
+                >
+                  Digital Products
+                </span>
+              </h1>
+            </HeroItem>
 
-            <p
-              className="max-w-2xl text-xl leading-relaxed font-light md:text-2xl"
-              style={{ color: "#e5beb4" }}
-            >
-              {PROFILE.title} based in {PROFILE.location}. {PROFILE.headline}
-            </p>
+            <HeroItem>
+              <p
+                className="max-w-2xl text-xl leading-relaxed font-light md:text-2xl"
+                style={{ color: "#e5beb4" }}
+              >
+                {PROFILE.title} based in {PROFILE.location}. {PROFILE.headline}
+              </p>
+            </HeroItem>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link
-                to="/work"
-                className="rounded-full px-8 py-4 font-bold transition-transform hover:scale-105"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  background: "linear-gradient(to right, #ffb4a1, #ff5628)",
-                  color: "#550f00",
-                }}
-              >
-                View Case Studies
-              </Link>
-              <a
-                href={PROFILE.linkedIn.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  background: "rgba(53,52,55,0.2)",
-                  borderColor: "rgba(92,64,57,0.15)",
-                  color: "#ffffff",
-                }}
-              >
-                Connect on LinkedIn
-              </a>
-              <Link
-                to="/about"
-                className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
-                style={{
-                  fontFamily: "'Manrope', sans-serif",
-                  background: "rgba(53,52,55,0.2)",
-                  borderColor: "rgba(92,64,57,0.15)",
-                  color: "#ffffff",
-                }}
-              >
-                About Me
-              </Link>
-            </div>
-          </div>
+            <HeroItem>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link
+                  to="/work"
+                  className="rounded-full px-8 py-4 font-bold transition-transform hover:scale-105"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    background: "linear-gradient(to right, #ffb4a1, #ff5628)",
+                    color: "#550f00",
+                  }}
+                >
+                  View Case Studies
+                </Link>
+                <a
+                  href={PROFILE.linkedIn.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    background: "rgba(53,52,55,0.2)",
+                    borderColor: "rgba(92,64,57,0.15)",
+                    color: "#ffffff",
+                  }}
+                >
+                  Connect on LinkedIn
+                </a>
+                <Link
+                  to="/about"
+                  className="rounded-full border px-8 py-4 font-bold backdrop-blur-xl transition-all hover:bg-[#353437]/40"
+                  style={{
+                    fontFamily: "'Manrope', sans-serif",
+                    background: "rgba(53,52,55,0.2)",
+                    borderColor: "rgba(92,64,57,0.15)",
+                    color: "#ffffff",
+                  }}
+                >
+                  About Me
+                </Link>
+              </div>
+            </HeroItem>
+          </HeroEntrance>
 
           <div className="relative lg:col-span-4">
-            <div className="relative flex aspect-square items-center justify-center">
+            <Reveal delay={0.25} y={40} className="relative flex aspect-square items-center justify-center">
               <div
-                className="absolute inset-0 rounded-full"
+                className="ember-glow absolute inset-0 rounded-full"
                 style={{ background: "rgba(255,180,161,0.1)", filter: "blur(100px)" }}
               />
               <div
@@ -109,23 +119,25 @@ export function Home() {
                 <img
                   src={HERO_IMG}
                   alt="Systems architecture visual"
-                  className="h-full w-full object-cover opacity-80"
+                  className="hero-drift h-full w-full object-cover opacity-80"
                 />
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       <section className="px-8 py-16" style={{ backgroundColor: "#0e0e10" }}>
         <div className="mx-auto max-w-screen-2xl">
-          <LinkedInProfileCard />
+          <Reveal>
+            <LinkedInProfileCard />
+          </Reveal>
         </div>
       </section>
 
       <section className="px-8 py-24" style={{ backgroundColor: "#0e0e10" }}>
         <div className="mx-auto max-w-screen-2xl">
-          <div className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
+          <Reveal className="mb-16 flex flex-col items-end justify-between gap-6 md:flex-row">
             <div className="space-y-4">
               <h2
                 className="text-sm font-bold tracking-widest uppercase"
@@ -144,19 +156,23 @@ export function Home() {
               className="mx-8 hidden h-px flex-grow md:block"
               style={{ backgroundColor: "rgba(92,64,57,0.2)" }}
             />
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 gap-12 text-zinc-100 md:grid-cols-2">
-            <ProjectCard project={FEATURED_PROJECTS[0]} />
-            <ProjectCard project={FEATURED_PROJECTS[1]} className="md:mt-24" />
-          </div>
+          <Stagger className="grid grid-cols-1 gap-12 text-zinc-100 md:grid-cols-2" stagger={0.14}>
+            <StaggerItem>
+              <ProjectCard project={FEATURED_PROJECTS[0]} />
+            </StaggerItem>
+            <StaggerItem>
+              <ProjectCard project={FEATURED_PROJECTS[1]} className="md:mt-24" />
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
       <section className="px-8 py-32" style={{ backgroundColor: "#131315" }}>
         <div className="mx-auto max-w-screen-2xl">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
-            <div className="space-y-6 lg:col-span-4">
+            <Reveal className="space-y-6 lg:col-span-4">
               <h2
                 className="text-sm font-bold tracking-widest uppercase"
                 style={{ color: "#e5beb4", fontFamily: "'Inter', sans-serif" }}
@@ -173,50 +189,55 @@ export function Home() {
               <p className="text-lg leading-relaxed" style={{ color: "#e5beb4" }}>
                 Bridging polished interfaces with reliable, type-safe architecture.
               </p>
-            </div>
+            </Reveal>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8">
+            <Stagger
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:col-span-8"
+              stagger={0.07}
+            >
               {CAPABILITIES.map((cap) => (
-                <div
-                  key={cap.title}
-                  className="group rounded-xl border p-8 transition-colors"
-                  style={{
-                    backgroundColor: "#1c1b1d",
-                    borderColor: "rgba(92,64,57,0.1)",
-                  }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLElement).style.borderColor = "rgba(255,180,161,0.3)")
-                  }
-                  onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLElement).style.borderColor = "rgba(92,64,57,0.1)")
-                  }
-                >
+                <StaggerItem key={cap.title}>
                   <div
-                    className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg"
-                    style={{ backgroundColor: cap.bgIcon }}
+                    className="group h-full rounded-xl border p-8 transition-colors"
+                    style={{
+                      backgroundColor: "#1c1b1d",
+                      borderColor: "rgba(92,64,57,0.1)",
+                    }}
+                    onMouseEnter={(e) =>
+                      ((e.currentTarget as HTMLElement).style.borderColor =
+                        "rgba(255,180,161,0.3)")
+                    }
+                    onMouseLeave={(e) =>
+                      ((e.currentTarget as HTMLElement).style.borderColor = "rgba(92,64,57,0.1)")
+                    }
                   >
-                    <span
-                      className="material-symbols-outlined"
-                      style={{
-                        color: cap.iconColor,
-                        fontVariationSettings: "'FILL' 1",
-                      }}
+                    <div
+                      className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: cap.bgIcon }}
                     >
-                      {cap.icon}
-                    </span>
+                      <span
+                        className="material-symbols-outlined"
+                        style={{
+                          color: cap.iconColor,
+                          fontVariationSettings: "'FILL' 1",
+                        }}
+                      >
+                        {cap.icon}
+                      </span>
+                    </div>
+                    <h5
+                      className="mb-3 text-xl font-bold text-white"
+                      style={{ fontFamily: "'Manrope', sans-serif" }}
+                    >
+                      {cap.title}
+                    </h5>
+                    <p className="text-sm leading-relaxed" style={{ color: "#e5beb4" }}>
+                      {cap.desc}
+                    </p>
                   </div>
-                  <h5
-                    className="mb-3 text-xl font-bold text-white"
-                    style={{ fontFamily: "'Manrope', sans-serif" }}
-                  >
-                    {cap.title}
-                  </h5>
-                  <p className="text-sm leading-relaxed" style={{ color: "#e5beb4" }}>
-                    {cap.desc}
-                  </p>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </div>
       </section>
@@ -225,7 +246,7 @@ export function Home() {
         className="px-8 py-24"
         style={{ background: "linear-gradient(to bottom, #131315, #0e0e10)" }}
       >
-        <div className="mx-auto max-w-screen-md space-y-10 text-center">
+        <Reveal className="mx-auto max-w-screen-md space-y-10 text-center">
           <h2
             className="text-4xl leading-tight font-black text-white md:text-6xl"
             style={{ fontFamily: "'Manrope', sans-serif" }}
@@ -239,7 +260,10 @@ export function Home() {
               style={{ fontFamily: "'Manrope', sans-serif", color: "#131315" }}
             >
               <span className="relative z-10">Start a Project</span>
-              <span className="material-symbols-outlined" style={{ color: "#131315" }}>
+              <span
+                className="material-symbols-outlined transition-transform group-hover:translate-x-1"
+                style={{ color: "#131315" }}
+              >
                 arrow_forward
               </span>
             </Link>
@@ -258,7 +282,7 @@ export function Home() {
               <span className="material-symbols-outlined">open_in_new</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

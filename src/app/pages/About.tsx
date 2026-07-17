@@ -1,7 +1,8 @@
 import portraitImg from "../../assets/about-portrait.jpg";
 
-import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
 import { EXPERIENCE, PROFILE } from "../../data/profile";
+import { LinkedInProfileCard } from "../components/LinkedInProfileCard";
+import { Reveal } from "../components/motion/Reveal";
 
 const CTA_BG_IMG =
   "https://images.unsplash.com/photo-1633164227069-df58d5f183df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
@@ -11,7 +12,7 @@ export function About() {
     <main className="pt-32 pb-24">
       <section className="mx-auto mb-32 max-w-screen-2xl px-8">
         <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-8">
+          <Reveal className="lg:col-span-8" y={36}>
             <span
               className="mb-6 inline-block rounded-full px-3 py-1 text-xs font-bold tracking-widest uppercase"
               style={{ backgroundColor: "#2a2a2c", color: "#d5baff", letterSpacing: "0.2em" }}
@@ -23,7 +24,10 @@ export function About() {
               style={{ fontFamily: "'Manrope', sans-serif", lineHeight: 0.95 }}
             >
               {PROFILE.name.split(" ")[0]} builds <br />
-              <span style={{ color: "#ffb4a1" }}>products</span> that ship <br />
+              <span className="ember-underline" style={{ color: "#ffb4a1" }}>
+                products
+              </span>{" "}
+              that ship <br />
               to production.
             </h1>
             <p
@@ -32,9 +36,9 @@ export function About() {
             >
               {PROFILE.linkedIn.summary}
             </p>
-          </div>
+          </Reveal>
 
-          <div className="hidden lg:col-span-4 lg:block">
+          <Reveal delay={0.15} className="hidden lg:col-span-4 lg:block">
             <div
               className="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-2xl"
               style={{ backgroundColor: "#1c1b1d" }}
@@ -52,12 +56,14 @@ export function About() {
                 }}
               />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="mx-auto mb-32 max-w-screen-2xl px-8">
-        <LinkedInProfileCard />
+        <Reveal>
+          <LinkedInProfileCard />
+        </Reveal>
       </section>
 
       <section className="mx-auto mb-40 max-w-screen-2xl px-8">

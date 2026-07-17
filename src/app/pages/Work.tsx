@@ -1,37 +1,40 @@
 import { ALL_PROJECTS, PROFILE } from "../../data/profile";
+import { Reveal } from "../components/motion/Reveal";
 
 export function Work() {
   const [slary, crm, ecommerce, tracker] = ALL_PROJECTS;
 
   return (
     <main className="mx-auto max-w-screen-2xl px-8 pt-32 pb-24">
-      <header className="mb-24">
-        <span
-          className="mb-4 block text-xs font-bold tracking-widest uppercase"
-          style={{ fontFamily: "'Manrope', sans-serif", color: "#ffb4a1", letterSpacing: "0.3em" }}
-        >
-          Selected Works
-        </span>
-        <h1
-          className="max-w-4xl text-6xl leading-none font-extrabold tracking-tighter text-white md:text-8xl"
-          style={{ fontFamily: "'Manrope', sans-serif" }}
-        >
-          Products that{" "}
+      <Reveal className="mb-24" y={36}>
+        <header>
           <span
-            className="bg-clip-text text-transparent"
-            style={{ backgroundImage: "linear-gradient(to right, #ffb4a1, #ff5628)" }}
+            className="mb-4 block text-xs font-bold tracking-widest uppercase"
+            style={{ fontFamily: "'Manrope', sans-serif", color: "#ffb4a1", letterSpacing: "0.3em" }}
           >
-            ship.
+            Selected Works
           </span>
-        </h1>
-        <p className="mt-8 max-w-2xl text-xl" style={{ color: "#e5beb4" }}>
-          Case studies from freelance and personal projects — all content is stored locally in this
-          portfolio. No backend required.
-        </p>
-      </header>
+          <h1
+            className="max-w-4xl text-6xl leading-none font-extrabold tracking-tighter text-white md:text-8xl"
+            style={{ fontFamily: "'Manrope', sans-serif" }}
+          >
+            Products that{" "}
+            <span
+              className="ember-underline bg-clip-text text-transparent"
+              style={{ backgroundImage: "linear-gradient(to right, #ffb4a1, #ff5628)" }}
+            >
+              ship.
+            </span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-xl" style={{ color: "#e5beb4" }}>
+            Case studies from freelance and personal projects — all content is stored locally in this
+            portfolio. No backend required.
+          </p>
+        </header>
+      </Reveal>
 
       <div className="space-y-0">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+        <Reveal className="grid grid-cols-1 gap-8 md:grid-cols-12" delay={0.08}>
           <a
             href={slary.href}
             target="_blank"
@@ -130,9 +133,9 @@ export function Work() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-12">
+        <Reveal className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-12" delay={0.06}>
           <div className="group cursor-pointer md:col-span-5 md:-mt-12">
             <div
               className="relative mb-6 overflow-hidden"
@@ -221,13 +224,14 @@ export function Work() {
               </div>
             </div>
           </a>
-        </div>
+        </Reveal>
       </div>
 
-      <section
-        className="mt-48 rounded-xl py-24 text-center"
-        style={{ backgroundColor: "#0e0e10" }}
-      >
+      <Reveal className="mt-48">
+        <section
+          className="rounded-xl py-24 text-center"
+          style={{ backgroundColor: "#0e0e10" }}
+        >
         <h2
           className="mb-8 text-5xl font-extrabold text-white"
           style={{ fontFamily: "'Manrope', sans-serif" }}
@@ -263,7 +267,8 @@ export function Work() {
             <span className="material-symbols-outlined">open_in_new</span>
           </a>
         </div>
-      </section>
+        </section>
+      </Reveal>
     </main>
   );
 }

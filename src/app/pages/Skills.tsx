@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 
 import { PROFILE, SKILL_CATEGORIES } from "../../data/profile";
+import { Reveal } from "../components/motion/Reveal";
 
 const CODE_IMG =
   "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
@@ -33,7 +34,10 @@ const FRONTEND_CARDS = [
 export function Skills() {
   return (
     <main className="overflow-x-hidden pt-32 pb-24">
-      <section className="mx-auto mb-32 grid max-w-screen-2xl grid-cols-1 items-end gap-12 px-8 lg:grid-cols-12">
+      <Reveal
+        className="mx-auto mb-32 grid max-w-screen-2xl grid-cols-1 items-end gap-12 px-8 lg:grid-cols-12"
+        y={36}
+      >
         <div className="lg:col-span-8">
           <div
             className="mb-6 inline-flex items-center gap-2 rounded-full px-3 py-1"
@@ -60,7 +64,7 @@ export function Skills() {
           >
             Mastering <br />
             <span
-              className="bg-clip-text text-transparent"
+              className="ember-underline bg-clip-text text-transparent"
               style={{ backgroundImage: "linear-gradient(to right, #E8400D, #ffb4a1)" }}
             >
               the stack.
@@ -78,7 +82,7 @@ export function Skills() {
             style={{ border: "1px solid rgba(92,64,57,0.3)" }}
           >
             <div
-              className="flex h-full w-full items-center justify-center rounded-full"
+              className="ember-glow flex h-full w-full items-center justify-center rounded-full"
               style={{ backgroundColor: "#353437" }}
             >
               <span
@@ -90,7 +94,7 @@ export function Skills() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       <section className="mx-auto mb-24 max-w-screen-2xl px-8">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
